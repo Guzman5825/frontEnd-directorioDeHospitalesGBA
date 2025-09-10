@@ -1,0 +1,22 @@
+[
+  { "id": 1, "nombre": "Traumatología" },
+  { "id": 2, "nombre": "Radiología" },
+  { "id": 3, "nombre": "Odontología" },
+  { "id": 4, "nombre": "Cardiología" },
+  { "id": 5, "nombre": "Pediatría" },
+  { "id": 6, "nombre": "Dermatología" },
+  { "id": 7, "nombre": "Ginecología" },
+  { "id": 8, "nombre": "Neurología" },
+  { "id": 9, "nombre": "Oftalmología" },
+  { "id": 10, "nombre": "Oncología" },
+  { "id": 11, "nombre": "Psiquiatría" },
+  { "id": 12, "nombre": "Endocrinología" },
+  { "id": 13, "nombre": "Urología" },
+  { "id": 14, "nombre": "Nefrología" },
+  { "id": 15, "nombre": "Gastroenterología" },
+  { "id": 16, "nombre": "Otorrinolaringología" },
+  { "id": 17, "nombre": "Reumatología" },
+  { "id": 18, "nombre": "Anestesiología" },
+  { "id": 19, "nombre": "Medicina General" },
+  { "id": 20, "nombre": "Cirugía General" }
+]

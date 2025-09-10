@@ -1,0 +1,22 @@
+[
+  { "id": 1, "nombre": "La Plata" },
+  { "id": 2, "nombre": "Mar del Plata" },
+  { "id": 3, "nombre": "Bahía Blanca" },
+  { "id": 4, "nombre": "Tandil" },
+  { "id": 5, "nombre": "San Nicolás de los Arroyos" },
+  { "id": 6, "nombre": "Pergamino" },
+  { "id": 7, "nombre": "Olavarría" },
+  { "id": 8, "nombre": "Quilmes" },
+  { "id": 9, "nombre": "Avellaneda" },
+  { "id": 10, "nombre": "Luján" },
+  { "id": 11, "nombre": "Necochea" },
+  { "id": 12, "nombre": "San Fernando" },
+  { "id": 13, "nombre": "Morón" },
+  { "id": 14, "nombre": "Merlo" },
+  { "id": 15, "nombre": "General Pacheco" },
+  { "id": 16, "nombre": "Cañuelas" },
+  { "id": 17, "nombre": "Zarate" },
+  { "id": 18, "nombre": "Chivilcoy" },
+  { "id": 19, "nombre": "Pilar" },
+  { "id": 20, "nombre": "Escobar" }
+]
