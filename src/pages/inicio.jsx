@@ -2,7 +2,7 @@ function Inicio() {
     return (
         <div className="flex flex-col min-h-screen">
             {/* Navbar */}
-            <nav className="bg-blue-600 text-white shadow-md">
+            <nav className="bg-gray-800 text-white shadow-md">
                 <div className="container mx-auto flex justify-between items-center p-4">
                     {/* Logo */}
                     <div className="font-bold text-xl">MiLogo</div>
@@ -16,8 +16,46 @@ function Inicio() {
             </nav>
 
             {/* Contenido principal */}
-            <main className="min-h-screen w-full flex items-center justify-center bg-gray-100">
-                <h1 className="text-3xl font-bold">Bienvenido a mi página</h1>
+            <main className="min-h-screen w-full flex flex-col bg-gradient-to-r from-white-100 via-green-10 to-green-50">
+                <div className="mx-20">
+                    {/* Sección Quienes Somos */}
+                    <section className="flex flex-col items-left justify-center text-left py-16 px-20">
+                        <h2 className="text-4xl font-bold mb-4">Quiénes Somos</h2>
+                        <p className="text-lg text-gray-700 max-w-2xl">
+                            Somos una plataforma dedicada a conectar a pacientes con hospitales y centros de salud en el Gran Buenos Aires.
+                            Nuestro objetivo es facilitar el acceso a la información sobre servicios de salud y mejorar la experiencia del paciente.
+                        </p>
+                    </section>
+
+                    {/* Sección Estilo Oracle Cloud */}
+                    <section className="flex flex-col md:flex-row w-full py-16 px-8 gap-8 justify-center">
+
+                        {/* Tarjeta 1 */}
+                        <div className="flex-1 bg-green-700 text-white p-8 rounded-2xl shadow-lg">
+                            <h3 className="text-2xl font-bold mb-4">Consultas</h3>
+                            <p className="mb-6">
+                                En esta seccion podras realizar consultas sobre los hospitales
+                                y sus especialidades.
+                            </p>
+                            <button className="bg-white text-green-700 px-4 py-2 rounded shadow hover:bg-gray-100 cursor-pointer">
+                                ir a consultas
+                            </button>
+                        </div>
+
+                        {/* Tarjeta 2 */}
+                        <div className="flex-1 bg-blue-800 text-white p-8 rounded-2xl shadow-lg">
+                            <h3 className="text-2xl font-bold mb-4">Ingresar centros de salud</h3>
+                            <p className="mb-6">
+                                En esta seccion podras ingresar nuevos centros de salud al sistema.
+                                Si eres un profesional de profesional de la salud, puedes registrar tu
+                                establecimiento para que más personas puedan encontrarlo.
+                            </p>
+                            <button className="bg-white text-blue-800 px-4 py-2 rounded shadow hover:bg-gray-100 cursor-pointer">
+                                Ir a establecimientos
+                            </button>
+                        </div>
+                    </section>
+                </div>
             </main>
 
 

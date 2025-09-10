@@ -8,12 +8,6 @@ import './index.css'
 function App() {
   return (
     <div>
-
-      <div> 
-        <h1 className="text-3xl font-bold underline text-center p-4 bg-blue-200 text-blue-900">
-          Directorio de Hospitales del Gran Buenos Aires</h1>
-      </div>
-
       <Routes>
         <Route path='/' element={<Inicio />} />
         <Route path='/contacto' element={<Contacto />} />
