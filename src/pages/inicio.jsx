@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Inicio() {
     return (
         <div className="flex flex-col min-h-screen">
@@ -10,7 +12,11 @@ function Inicio() {
                     {/* Links */}
                     <ul className="flex gap-6">
                         <li className="hover:text-gray-200 cursor-pointer">Inicio</li>
-                        <li className="hover:text-gray-200 cursor-pointer">Contacto</li>
+                        <li className="hover:text-gray-200 cursor-pointer">
+                            <Link to="/contacto" className="hover:text-gray-200 cursor-pointer">
+                                Contacto
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -37,9 +43,12 @@ function Inicio() {
                                 En esta seccion podras realizar consultas sobre los hospitales
                                 y sus especialidades.
                             </p>
-                            <button className="bg-white text-green-700 px-4 py-2 rounded shadow hover:bg-gray-100 cursor-pointer">
-                                ir a consultas
-                            </button>
+                            <Link
+                                to="/hospitales"
+                                className="bg-white text-green-700 px-4 py-2 rounded shadow hover:bg-gray-100 cursor-pointer"
+                            >
+                                Ir a consultas
+                            </Link>
                         </div>
 
                         {/* Tarjeta 2 */}
@@ -50,9 +59,12 @@ function Inicio() {
                                 Si eres un profesional de profesional de la salud, puedes registrar tu
                                 establecimiento para que más personas puedan encontrarlo.
                             </p>
-                            <button className="bg-white text-blue-800 px-4 py-2 rounded shadow hover:bg-gray-100 cursor-pointer">
-                                Ir a establecimientos
-                            </button>
+                            <Link
+                                to="/formularioEstablecimiento"
+                                className="bg-white text-blue-700 px-4 py-2 rounded shadow hover:bg-gray-100 cursor-pointer"
+                            >
+                                Ir a Establecimientos
+                            </Link>
                         </div>
                     </section>
                 </div>
