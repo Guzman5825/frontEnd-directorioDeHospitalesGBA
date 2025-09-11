@@ -1,8 +1,8 @@
-import hospitales from "../datosPrueba/hospitales.json";
-import HospitalRow from "../componentes/HospitalRow";
-import ciudades from "../datosPrueba/ciudades.json";
-import ListaDesplegable from "../componentes/ListaDesplegable";
-import especialidades from "../datosPrueba/especialidades.json";
+import hospitales from '../datosPrueba/hospitales.json';
+import HospitalRow from '../componentes/HospitalRow';
+import ciudades from '../datosPrueba/ciudades.json';
+import ListaDesplegable from '../componentes/ListaDesplegable';
+import especialidades from '../datosPrueba/especialidades.json';
 
 export default function HospitalTable() {
   return (
