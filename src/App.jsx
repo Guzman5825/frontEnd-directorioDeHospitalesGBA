@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom"
-import Inicio from './pages/inicio.jsx'
-import Contacto from './pages/contacto.jsx'
-import Hospitales from './pages/hospitales.jsx'
-import HospitalDetalle from "./pages/hospitalDetalle.jsx"
+import Inicio from "./pages/Inicio.jsx"
+import Contacto from './pages/Contacto.jsx'
+import Hospitales from './pages/Hospitales.jsx'
+import HospitalDetalle from "./pages/HospitalDetalle.jsx"
+import FormularioEstablecimiento from "./pages/FormularioEstablecimiento.jsx"
 import './index.css'
-import FormularioEstablecimiento from "./pages/formularioEstablecimiento.jsx"
 
 
 function App() {
