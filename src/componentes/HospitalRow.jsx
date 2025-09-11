@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function HospitalRow({ nombre, ubicacion, especialidades }) {
   const [open, setOpen] = useState(false);
@@ -24,10 +25,14 @@ export default function HospitalRow({ nombre, ubicacion, especialidades }) {
           <td colSpan={3} className="bg-gray-50 px-4 py-3">
             <p className="font-medium mb-2">Especialidades:</p>
             <ul className="list-disc list-inside text-sm text-gray-700">
-              {especialidades.map((esp, index) => (
+              {
+              especialidades.map((esp, index) => (
                 <li key={index}>{esp}</li>
-              ))}
+              ))
+              
+              }
             </ul>
+            <Link to={`/hospitales/${nombre}`}>enlace</Link>
           </td>
         </tr>
       )}
