@@ -1,5 +1,5 @@
-import { useParams } from "react-router-dom";
-import hospitales from "../datosPrueba/hospitales.json";
+import { useParams } from 'react-router-dom';
+import hospitales from '../datosPrueba/hospitales.json';
 
 export default function HospitalDetalle() {
   const { nombre } = useParams();
