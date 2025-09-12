@@ -1,46 +1,41 @@
 import hospitales from '../datosPrueba/hospitales.json';
 import HospitalRow from '../componentes/HospitalRow';
-import ciudades from '../datosPrueba/ciudades.json';
-import ListaDesplegable from '../componentes/ListaDesplegable';
-import especialidades from '../datosPrueba/especialidades.json';
+import Selectores from '../componentes/Selectores';
+import Buscador from '../componentes/Buscador';
 
 export default function HospitalTable() {
-  return (
+  const handleFiltrar = ({ especialidad, ciudad, localidad }) => {
+    // Aquí ya recibes los datos del hijo
+    console.log("Datos recibidos:", especialidad, ciudad, localidad);
+    alert(`Voy a filtrar con:\nespecialidad: ${especialidad} \nCiudad: ${ciudad}\nLocalidad: ${localidad}`);
+  };
 
+  const handleBuscar = (texto) => {
+    alert(`Buscaste: ${texto}`); // aquí puedes usar el valor
+  };
+
+  return (
     <div className="p-6">
-      <nav className="bg-green-700 text-white p-4 rounded-t-lg mb-6">
+      <div className="max-w-xl bg-gray-100">
+
+      </div>
+
+      <nav className="bg-green-700 text-white p-4 rounded-t-lg">
         <h1 className="text-2xl font-bold">Lista de Hospitales</h1>
       </nav>
       {/* Contenedor buscador */}
-      <div className="bg-white rounded-md shadow-md items-center w-full gap-2 p-2">
-        <div className="flex items-center gap-2">
-          <h3 className="font-semibold text-gray-800">Buscar por nombre</h3>
-          <div className="flex gap-2">
-            <input
-              type="text"
-              placeholder="Buscar hospital por nombre"
-              className="border rounded-md px-2 py-1"
-            />
-            <button className="border bg-green-700 hover:bg-green-900 text-white rounded-md px-2 py-1">
-              Buscar
-            </button>
-          </div>
 
+      <div className='max-w-xl'>
+        <div className="bg-white items-center  p-2 mb-2">
+          <h2 className="font-bold font-arial text-gray-800">Buscar por filtros</h2>
+          <Selectores onFiltrar={handleFiltrar} />
         </div>
-        <div className="space-y-3">
-          <h3 className="font-semibold text-gray-800">Buscar por filtros</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {/*<ListaDesplegable titulo="Seleccione un hospital" items={hospitales} mostrar="nombre" />*/}
-            <ListaDesplegable titulo="Seleccione una especialidad" items={especialidades} mostrar="nombre" />
-            <ListaDesplegable titulo="Seleccione una ciudad" items={ciudades} mostrar="nombre" />
-            
-          </div>
-          <button className="bg-green-700 hover:bg-green-900 text-white rounded-md px-4 py-2">
-            Filtrar
-          </button>
+        <div className="bg-white items-center  p-2 mb-2">
+          <h2 className="font-bold font-arial text-gray-800">Buscar por nombre</h2>
+          <Buscador onBuscar={handleBuscar} />
         </div>
-
       </div>
+
 
       <table className="w-full border border-gray-300 overflow-hidden">
         <thead className="bg-green-600 text-white">

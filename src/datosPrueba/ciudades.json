@@ -1,22 +1,191 @@
 [
-  { "id": 1, "nombre": "La Plata" },
-  { "id": 2, "nombre": "Mar del Plata" },
-  { "id": 3, "nombre": "Bahía Blanca" },
-  { "id": 4, "nombre": "Tandil" },
-  { "id": 5, "nombre": "San Nicolás de los Arroyos" },
-  { "id": 6, "nombre": "Pergamino" },
-  { "id": 7, "nombre": "Olavarría" },
-  { "id": 8, "nombre": "Quilmes" },
-  { "id": 9, "nombre": "Avellaneda" },
-  { "id": 10, "nombre": "Luján" },
-  { "id": 11, "nombre": "Necochea" },
-  { "id": 12, "nombre": "San Fernando" },
-  { "id": 13, "nombre": "Morón" },
-  { "id": 14, "nombre": "Merlo" },
-  { "id": 15, "nombre": "General Pacheco" },
-  { "id": 16, "nombre": "Cañuelas" },
-  { "id": 17, "nombre": "Zarate" },
-  { "id": 18, "nombre": "Chivilcoy" },
-  { "id": 19, "nombre": "Pilar" },
-  { "id": 20, "nombre": "Escobar" }
+  {
+    "id": 1,
+    "nombre": "La Matanza",
+    "localidades": [
+      "San Justo",
+      "Ramos Mejía",
+      "Lomas del Mirador",
+      "La Tablada",
+      "Villa Madero",
+      "Villa Celina",
+      "Tapiales",
+      "Aldo Bonzi",
+      "Ciudad Evita",
+      "González Catán",
+      "Gregorio de Laferrere",
+      "Isidro Casanova",
+      "20 de Junio",
+      "Villa Luzuriaga",
+      "Virrey del Pino"
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Merlo",
+    "localidades": [
+      "Merlo",
+      "San Antonio de Padua",
+      "Parque San Martín",
+      "Libertad",
+      "Mariano Acosta",
+      "Pontevedra",
+      "Agustín Ferrari",
+      "Loma Florida",
+      "Loma Grande",
+      "Los Paraísos",
+      "Merlo Gómez"
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Morón",
+    "localidades": [
+      "Morón",
+      "Castelar",
+      "El Palomar",
+      "Haedo",
+      "Villa Sarmiento"
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Tandil",
+    "localidades": [
+      "Azucena",
+      "Cerro Leones",
+      "Gardey",
+      "Hinojo",
+      "La Movediza",
+      "Las Tunitas",
+      "Parque Lasa",
+      "Ranchos",
+      "Tandil",
+      "Vela"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "San Nicolás de los Arroyos",
+    "localidades": [
+      "Campos Salles",
+      "Conesa",
+      "Erézcano",
+      "General Rojo",
+      "La Emilia",
+      "Villa Campi",
+      "Villa Canto",
+      "Villa Esperanza",
+      "Villa Hermosa",
+      "Villa Riccio"
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Pergamino",
+    "localidades": [
+      "Acevedo",
+      "Arroyo del Medio",
+      "Campo Buena Vista",
+      "Campo Roth",
+      "Campo Urquiza",
+      "Fontezuela",
+      "Guerrico",
+      "Juan A. de la Peña",
+      "La Vanguardia",
+      "La Violeta",
+      "Manuel Ocampo",
+      "Mariano Benítez",
+      "Mariano H. Alfonzo",
+      "Ortiz Basualdo",
+      "Pinzón",
+      "Rancagua"
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "Olavarría",
+    "localidades": [
+      "Alvaro Barros",
+      "Blanca Grande",
+      "Calera Avellaneda",
+      "Colonia Hinojo",
+      "Colonia Nievas",
+      "Colonia San Miguel",
+      "Durañona",
+      "Espigas",
+      "Hinojo",
+      "Loma Negra",
+      "Muñoz",
+      "Pourtalé",
+      "Recalde",
+      "Rocha",
+      "Santa Luisa",
+      "Sierra Chica",
+      "Sierras Bayas",
+      "Villa Mi Serranía"
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Quilmes",
+    "localidades": [
+      "Bernal",
+      "Bernal Oeste",
+      "Don Bosco",
+      "Ezpeleta",
+      "Quilmes",
+      "Quilmes Oeste",
+      "San Francisco Solano",
+      "Villa La Florida"
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Avellaneda",
+    "localidades": [
+      "Avellaneda",
+      "Dock Sud",
+      "Dominico",
+      "Gerli",
+      "Piñeiro",
+      "Crucesita",
+      "Sarandí",
+      "Wilde"
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Luján",
+    "localidades": [
+      "Carlos Keen",
+      "Cortínez",
+      "Jáuregui",
+      "Luján",
+      "Olivera",
+      "Open Door",
+      "Parque Lasa",
+      "Villa Flandria",
+      "Villa Lía",
+      "Villa Ruiz"
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "Necochea",
+    "localidades": [
+      "Claraz",
+      "Balneario Costa Bonita",
+      "Energía",
+      "Juan Nepomuceno Fernández",
+      "La Dulce",
+      "Las Grutas",
+      "Lumb",
+      "Quequén",
+      "Ramón Santamarina",
+      "San José",
+      "Santa María del Mar",
+      "Villa Díaz Vélez"
+    ]
+  }
 ]
