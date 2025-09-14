@@ -2,7 +2,7 @@ import { useState } from "react";
 import tipos from "../datosPrueba/tipos.json";
 import ciudades from "../datosPrueba/ciudades.json";
 import especialidadesData from "../datosPrueba/especialidades.json";
-
+import { Link } from "react-router-dom";
 export default function FormularioHospital() {
   const [nombre, setNombre] = useState("");
   const [tipo, setTipo] = useState("");
@@ -111,163 +111,177 @@ export default function FormularioHospital() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md space-y-4"
-    >
-      <input
-        className="border p-2 rounded w-full"
-        placeholder="Nombre"
-        value={nombre}
-        onChange={(e) => setNombre(e.target.value)}
-      />
-
-      {/* Selector de tipo */}
-      <select
-        className="border p-2 rounded w-full"
-        value={tipo}
-        onChange={(e) => setTipo(e.target.value)}
+    <div>
+      <nav className="bg-blue-800 text-white shadow-md">
+        <div className="container mx-auto flex justify-between items-center p-4">
+          <div className="font-bold text-xl">Ingresos de nuevos centros medicos</div>
+          <ul className="flex gap-6">
+            <li className="hover:text-gray-200 cursor-pointer">
+              <Link to="/" className="hover:text-gray-200 cursor-pointer">
+                Inicio
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md space-y-4"
       >
-        <option value="">Selecciona un tipo</option>
-        {tipos.map((t) => (
-          <option key={t.id} value={t.tipo}>
-            {t.tipo}
-          </option>
-        ))}
-      </select>
+        <input
+          className="border p-2 rounded w-full"
+          placeholder="Nombre"
+          value={nombre}
+          onChange={(e) => setNombre(e.target.value)}
+        />
 
-      {/* Sección especialidades */}
-      <div>
-        <div className="flex gap-2">
-          <select
-            className="border p-2 rounded flex-grow"
-            value={especialidadSeleccionada}
-            onChange={(e) => setEspecialidadSeleccionada(e.target.value)}
-          >
-            <option value="">Selecciona una especialidad</option>
-            {especialidadesData.map((esp) => (
-              <option key={esp.id} value={esp.nombre}>
-                {esp.nombre}
-              </option>
+        {/* Selector de tipo */}
+        <select
+          className="border p-2 rounded w-full"
+          value={tipo}
+          onChange={(e) => setTipo(e.target.value)}
+        >
+          <option value="">Selecciona un tipo</option>
+          {tipos.map((t) => (
+            <option key={t.id} value={t.tipo}>
+              {t.tipo}
+            </option>
+          ))}
+        </select>
+
+        {/* Sección especialidades */}
+        <div>
+          <div className="flex gap-2">
+            <select
+              className="border p-2 rounded flex-grow"
+              value={especialidadSeleccionada}
+              onChange={(e) => setEspecialidadSeleccionada(e.target.value)}
+            >
+              <option value="">Selecciona una especialidad</option>
+              {especialidadesData.map((esp) => (
+                <option key={esp.id} value={esp.nombre}>
+                  {esp.nombre}
+                </option>
+              ))}
+            </select>
+            <button
+              type="button"
+              onClick={agregarEspecialidad}
+              className="bg-green-500 text-white px-4 rounded hover:bg-green-600"
+            >
+              Agregar
+            </button>
+          </div>
+
+          {/* Lista de especialidades seleccionadas */}
+          <div className="flex flex-wrap gap-2 mt-2">
+            {especialidades.map((esp, i) => (
+              <span
+                key={i}
+                className="bg-gray-200 px-3 py-1 rounded-full flex items-center gap-2"
+              >
+                {esp}
+                <button
+                  type="button"
+                  onClick={() => quitarEspecialidad(esp)}
+                  className="text-red-500 hover:text-red-700"
+                >
+                  ✕
+                </button>
+              </span>
             ))}
-          </select>
-          <button
-            type="button"
-            onClick={agregarEspecialidad}
-            className="bg-green-500 text-white px-4 rounded hover:bg-green-600"
-          >
-            Agregar
-          </button>
+          </div>
         </div>
 
-        {/* Lista de especialidades seleccionadas */}
-        <div className="flex flex-wrap gap-2 mt-2">
-          {especialidades.map((esp, i) => (
-            <span
-              key={i}
-              className="bg-gray-200 px-3 py-1 rounded-full flex items-center gap-2"
+        {/* Sección teléfonos */}
+        <div>
+          <div className="flex gap-2">
+            <input
+              className="border p-2 rounded flex-grow"
+              placeholder="Agregar teléfono"
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}
+            />
+            <button
+              type="button"
+              onClick={agregarTelefono}
+              className="bg-green-500 text-white px-4 rounded hover:bg-green-600"
             >
-              {esp}
-              <button
-                type="button"
-                onClick={() => quitarEspecialidad(esp)}
-                className="text-red-500 hover:text-red-700"
+              Agregar
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {telefonos.map((tel, i) => (
+              <span
+                key={i}
+                className="bg-gray-200 px-3 py-1 rounded-full flex items-center gap-2"
               >
-                ✕
-              </button>
-            </span>
+                {tel}
+                <button
+                  type="button"
+                  onClick={() => quitarTelefono(tel)}
+                  className="text-red-500 hover:text-red-700"
+                >
+                  ✕
+                </button>
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Selector de ciudad */}
+        <select
+          className="border p-2 rounded w-full"
+          value={ciudad}
+          onChange={(e) => {
+            setCiudad(e.target.value);
+            setLocalidad("");
+          }}
+        >
+          <option value="">Selecciona una ciudad</option>
+          {ciudades.map((c) => (
+            <option key={c.id} value={c.nombre}>
+              {c.nombre}
+            </option>
           ))}
-        </div>
-      </div>
+        </select>
 
-      {/* Sección teléfonos */}
-      <div>
-        <div className="flex gap-2">
-          <input
-            className="border p-2 rounded flex-grow"
-            placeholder="Agregar teléfono"
-            value={telefono}
-            onChange={(e) => setTelefono(e.target.value)}
-          />
-          <button
-            type="button"
-            onClick={agregarTelefono}
-            className="bg-green-500 text-white px-4 rounded hover:bg-green-600"
-          >
-            Agregar
-          </button>
-        </div>
-        <div className="flex flex-wrap gap-2 mt-2">
-          {telefonos.map((tel, i) => (
-            <span
-              key={i}
-              className="bg-gray-200 px-3 py-1 rounded-full flex items-center gap-2"
-            >
-              {tel}
-              <button
-                type="button"
-                onClick={() => quitarTelefono(tel)}
-                className="text-red-500 hover:text-red-700"
-              >
-                ✕
-              </button>
-            </span>
+        {/* Selector de localidad */}
+        <select
+          className="border p-2 rounded w-full"
+          value={localidad}
+          onChange={(e) => setLocalidad(e.target.value)}
+          disabled={!ciudad}
+        >
+          <option value="">Selecciona una localidad</option>
+          {localidadesDisponibles.map((l, i) => (
+            <option key={i} value={l}>
+              {l}
+            </option>
           ))}
-        </div>
-      </div>
+        </select>
 
-      {/* Selector de ciudad */}
-      <select
-        className="border p-2 rounded w-full"
-        value={ciudad}
-        onChange={(e) => {
-          setCiudad(e.target.value);
-          setLocalidad("");
-        }}
-      >
-        <option value="">Selecciona una ciudad</option>
-        {ciudades.map((c) => (
-          <option key={c.id} value={c.nombre}>
-            {c.nombre}
-          </option>
-        ))}
-      </select>
+        <input
+          className="border p-2 rounded w-full"
+          placeholder="Dirección"
+          value={direccion}
+          onChange={(e) => setDireccion(e.target.value)}
+        />
 
-      {/* Selector de localidad */}
-      <select
-        className="border p-2 rounded w-full"
-        value={localidad}
-        onChange={(e) => setLocalidad(e.target.value)}
-        disabled={!ciudad}
-      >
-        <option value="">Selecciona una localidad</option>
-        {localidadesDisponibles.map((l, i) => (
-          <option key={i} value={l}>
-            {l}
-          </option>
-        ))}
-      </select>
+        <input
+          className="border p-2 rounded w-full"
+          placeholder="Días y horarios"
+          value={diasYHorarios}
+          onChange={(e) => setDiasYHorarios(e.target.value)}
+        />
 
-      <input
-        className="border p-2 rounded w-full"
-        placeholder="Dirección"
-        value={direccion}
-        onChange={(e) => setDireccion(e.target.value)}
-      />
-
-      <input
-        className="border p-2 rounded w-full"
-        placeholder="Días y horarios"
-        value={diasYHorarios}
-        onChange={(e) => setDiasYHorarios(e.target.value)}
-      />
-
-      <button
-        type="submit"
-        className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-full"
-      >
-        Agregar Hospital
-      </button>
-    </form>
+        <button
+          type="submit"
+          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-full"
+        >
+          Agregar Hospital
+        </button>
+      </form>
+    </div>
   );
 }
