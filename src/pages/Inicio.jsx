@@ -17,6 +17,11 @@ function Inicio() {
                                 Contacto
                             </Link>
                         </li>
+                        <li className="hover:text-gray-200 cursor-pointer">
+                            <Link to="/administracion" className="hover:text-gray-200 cursor-pointer">
+                                Administracion
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </nav>
