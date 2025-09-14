@@ -1,11 +1,44 @@
-import { useParams } from 'react-router-dom';
-import hospitales from '../datosPrueba/hospitales.json';
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function HospitalDetalle() {
   const { nombre } = useParams();
+  const [hospital, setHospital] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Buscar hospital por nombre (React Router decodifica %20 automáticamente)
-  const hospital = hospitales.find((h) => h.nombre === nombre);
+  useEffect(() => {
+    const fetchHospital = async () => {
+      const baseUrl = `${import.meta.env.VITE_APP_API_URL}/hospitales`;
+      try {
+        const response = await fetch(`${baseUrl}/${nombre}`);
+        if (!response.ok) {
+          throw new Error("Error al obtener hospital");
+        }
+        const data = await response.json();
+
+        if (data.length > 0) {
+          setHospital(data[0]); // Tomamos el primero
+        } else {
+          setError("Hospital no encontrado");
+        }
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchHospital();
+  }, [nombre]);
+
+  if (loading) {
+    return <div className="p-6 text-center text-gray-500">Cargando...</div>;
+  }
+
+  if (error) {
+    return <div className="p-6 text-center text-red-500">{error}</div>;
+  }
 
   if (!hospital) {
     return <div className="p-6 text-center text-red-500">Hospital no encontrado</div>;
