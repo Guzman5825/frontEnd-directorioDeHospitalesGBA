@@ -49,14 +49,14 @@ export default function HospitalDetalle() {
         <div className="container mx-auto flex justify-between items-center p-4">
           <div className="font-bold text-xl">INFORMACION</div>
           <ul className="flex gap-6">
-            <li className="hover:text-gray-200 cursor-pointer">
-              <Link to="/" className="hover:text-gray-200 cursor-pointer">
+            <li className="cursor-pointer">
+              <Link to="/" className="cursor-pointer">
                 Inicio
               </Link>
               
             </li>
-            <li className="hover:text-gray-200 cursor-pointer">
-              <Link to="/hospitales" className="hover:text-gray-200 cursor-pointer">
+            <li className="cursor-pointer">
+              <Link to="/hospitales" className="cursor-pointer">
                 Volver a busqueda
               </Link>
             </li>
