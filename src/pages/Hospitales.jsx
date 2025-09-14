@@ -14,19 +14,17 @@ export default function HospitalTable() {
     // Armo los parámetros dinámicamente
     const params = new URLSearchParams();
 
-    if (especialidad && especialidad !== "Todas las especialidades") {
+    if (especialidad && especialidad !== "Todas las especialidades") 
       params.append("especialidad", especialidad);
-    }
-    if (ciudad && ciudad !== "Todas las ciudades") {
+    
+    if (ciudad && ciudad !== "Todas las ciudades") 
       params.append("ciudad", ciudad);
-    }
-    if (localidad && localidad !== "Todas las localidades") {
+    
+    if (localidad && localidad !== "Todas las localidades") 
       params.append("localidad", localidad);
-    }
-
-    if( nombre ){
-        params.append("nombre", nombre);
-    }
+  
+    if( nombre )
+      params.append("nombre", nombre);
 
     const url = params.toString() ? `${baseUrl}?${params}` : baseUrl;
     
@@ -37,7 +35,6 @@ export default function HospitalTable() {
       }
       const data = await response.json();
 
-      // 👉 Guardo los datos en el estado
       setHospitales(data.data);
     } catch (error) {
       alert(`Error consultando la API:\n${error.message}`);
