@@ -1,7 +1,6 @@
 import { useState } from "react";
 import HospitalRow from "../componentes/HospitalRow";
 import Selectores from "../componentes/Selectores";
-import Buscador from "../componentes/Buscador";
 
 export default function HospitalTable() {
   // Estado para los hospitales
