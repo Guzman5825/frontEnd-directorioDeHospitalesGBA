@@ -6,12 +6,12 @@ import Buscador from "../componentes/Buscador";
 export default function HospitalTable() {
   // Estado para los hospitales
   const [hospitales, setHospitales] = useState([]);
-
-  const handleFiltrar = async ({ especialidad, ciudad, localidad }) => {
-    console.log("Datos recibidos:", especialidad, ciudad, localidad);
-
+  
+  const handleFiltrar = async ({ especialidad, ciudad, localidad, nombre }) => {
     const baseUrl = `${import.meta.env.VITE_APP_API_URL}/hospitales`;
 
+    console.log("Datos recibidos:", especialidad, ciudad, localidad, nombre);
+    
     // Armo los parámetros dinámicamente
     const params = new URLSearchParams();
 
@@ -25,8 +25,12 @@ export default function HospitalTable() {
       params.append("localidad", localidad);
     }
 
-    const url = params.toString() ? `${baseUrl}?${params}` : baseUrl;
+    if( nombre ){
+        params.append("nombre", nombre);
+    }
 
+    const url = params.toString() ? `${baseUrl}?${params}` : baseUrl;
+    
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -41,10 +45,6 @@ export default function HospitalTable() {
     }
   };
 
-  const handleBuscar = (texto) => {
-    alert(`Buscaste: ${texto}`);
-    // podrías hacer algo parecido a handleFiltrar pero con ?nombre=texto
-  };
 
   return (
     <div className="p-6">
@@ -60,12 +60,7 @@ export default function HospitalTable() {
           </h2>
           <Selectores onFiltrar={handleFiltrar} />
         </div>
-        <div className="bg-white items-center p-2 mb-2">
-          <h2 className="font-bold font-arial text-gray-800">
-            Buscar por nombre
-          </h2>
-          <Buscador onBuscar={handleBuscar} />
-        </div>
+
       </div>
 
       <table className="w-full border border-gray-300 overflow-hidden">

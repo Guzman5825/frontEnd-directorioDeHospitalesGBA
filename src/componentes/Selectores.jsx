@@ -7,6 +7,7 @@ export default function Selectores({ onFiltrar }) {
     const [ciudadSeleccionada, setCiudadSeleccionada] = useState("todas");
     const [localidadSeleccionada, setLocalidadSeleccionada] = useState("todas");
     const [especialidadSeleccionada, setEspecialidadSeleccionada] = useState("todas");
+    const [valor, setValor] = useState("");
 
     const opcionesEspecialidades = [
         { value: "todas", label: "Todas las especialidades" },
@@ -49,6 +50,7 @@ export default function Selectores({ onFiltrar }) {
                     localidadSeleccionada === "todas"
                         ? "Todas las localidades"
                         : localidadSeleccionada,
+                nombre: valor
             });
         }
     };
@@ -56,7 +58,7 @@ export default function Selectores({ onFiltrar }) {
     return (
         <div className="pl-2 flex items-center justify-between">
             <div>
-                <Selector  
+                <Selector
                     label="Ingrese una especialidad"
                     value={especialidadSeleccionada}
                     onChange={setEspecialidadSeleccionada}
@@ -77,6 +79,18 @@ export default function Selectores({ onFiltrar }) {
                     onChange={setLocalidadSeleccionada}
                     options={opcionesLocalidades}
                 />
+                <div className="flex flex-col gap-1">
+                    <label className="text-sm font-medium">escribe el nombre del hospital</label>
+                    <input
+                        type="text"
+                        placeholder="Buscar hospital por nombre"
+                        value={valor}
+                        onChange={(e) => setValor(e.target.value)}
+                        className="border px-2 py-1 rounded w-64"
+                    />
+                </div>
+
+
             </div>
             <button
                 onClick={handleFiltrar}
