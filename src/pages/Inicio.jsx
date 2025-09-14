@@ -7,11 +7,10 @@ function Inicio() {
             <nav className="bg-gray-800 text-white shadow-md">
                 <div className="container mx-auto flex justify-between items-center p-4">
                     {/* Logo */}
-                    <div className="font-bold text-xl">MiLogo</div>
+                    <div className="font-bold text-xl">Inicio</div>
 
                     {/* Links */}
                     <ul className="flex gap-6">
-                        <li className="hover:text-gray-200 cursor-pointer">Inicio</li>
                         <li className="hover:text-gray-200 cursor-pointer">
                             <Link to="/contacto" className="hover:text-gray-200 cursor-pointer">
                                 Contacto
@@ -76,10 +75,9 @@ function Inicio() {
             </main>
 
 
-            {/* Footer */}
             <footer className="bg-gray-900 text-white">
                 <div className="container mx-auto p-4 text-center">
-                    &copy; 2024 MiSitioWeb. Todos los derechos reservados.
+                    &copy; 2025 Sitio.
                 </div>
             </footer>
         </div>
