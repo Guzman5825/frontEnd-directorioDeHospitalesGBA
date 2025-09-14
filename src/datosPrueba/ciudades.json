@@ -17,11 +17,70 @@
       "Isidro Casanova",
       "20 de Junio",
       "Villa Luzuriaga",
-      "Virrey del Pino"
+      "Virrey del Pino",
+      "La Quilmes",
+      "El Palomar",
+      "Rafael Castillo",
+      "Parque San Martín"
     ]
   },
   {
     "id": 2,
+    "nombre": "Tres de Febrero",
+    "localidades": [
+      "Caseros",
+      "Santos Lugares",
+      "Villa Bosch",
+      "Ciudadela",
+      "El Palomar",
+      "José Ingenieros",
+      "Villa Raffo",
+      "Villa Martelli",
+      "Villa del Parque",
+      "Loma Hermosa",
+      "Villa Libertad"
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Hurlingham",
+    "localidades": [
+      "Hurlingham",
+      "William Morris",
+      "Villa Tesei",
+      "El Palomar",
+      "Villa Crespo",
+      "Villa Alianza"
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Morón",
+    "localidades": [
+      "Morón",
+      "Castelar",
+      "Haedo",
+      "El Palomar",
+      "Villa Sarmiento",
+      "Trujui",
+      "Villa Udaondo",
+      "Morón Sur",
+      "Morón Norte"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Ituzaingó",
+    "localidades": [
+      "Ituzaingó",
+      "Villa Udaondo",
+      "El Pilar",
+      "Parque Leloir",
+      "Villa Ariza"
+    ]
+  },
+  {
+    "id": 6,
     "nombre": "Merlo",
     "localidades": [
       "Merlo",
@@ -34,158 +93,53 @@
       "Loma Florida",
       "Loma Grande",
       "Los Paraísos",
-      "Merlo Gómez"
-    ]
-  },
-  {
-    "id": 3,
-    "nombre": "Morón",
-    "localidades": [
-      "Morón",
-      "Castelar",
-      "El Palomar",
-      "Haedo",
-      "Villa Sarmiento"
-    ]
-  },
-  {
-    "id": 4,
-    "nombre": "Tandil",
-    "localidades": [
-      "Azucena",
-      "Cerro Leones",
-      "Gardey",
-      "Hinojo",
-      "La Movediza",
-      "Las Tunitas",
-      "Parque Lasa",
-      "Ranchos",
-      "Tandil",
-      "Vela"
-    ]
-  },
-  {
-    "id": 5,
-    "nombre": "San Nicolás de los Arroyos",
-    "localidades": [
-      "Campos Salles",
-      "Conesa",
-      "Erézcano",
-      "General Rojo",
-      "La Emilia",
-      "Villa Campi",
-      "Villa Canto",
-      "Villa Esperanza",
-      "Villa Hermosa",
-      "Villa Riccio"
-    ]
-  },
-  {
-    "id": 6,
-    "nombre": "Pergamino",
-    "localidades": [
-      "Acevedo",
-      "Arroyo del Medio",
-      "Campo Buena Vista",
-      "Campo Roth",
-      "Campo Urquiza",
-      "Fontezuela",
-      "Guerrico",
-      "Juan A. de la Peña",
-      "La Vanguardia",
-      "La Violeta",
-      "Manuel Ocampo",
-      "Mariano Benítez",
-      "Mariano H. Alfonzo",
-      "Ortiz Basualdo",
-      "Pinzón",
-      "Rancagua"
+      "Merlo Gómez",
+      "Villa Argüello",
+      "Villa Polledo",
+      "Paso del Rey",
+      "Kilómetro 35"
     ]
   },
   {
     "id": 7,
-    "nombre": "Olavarría",
+    "nombre": "Moreno",
     "localidades": [
-      "Alvaro Barros",
-      "Blanca Grande",
-      "Calera Avellaneda",
-      "Colonia Hinojo",
-      "Colonia Nievas",
-      "Colonia San Miguel",
-      "Durañona",
-      "Espigas",
-      "Hinojo",
-      "Loma Negra",
-      "Muñoz",
-      "Pourtalé",
-      "Recalde",
-      "Rocha",
-      "Santa Luisa",
-      "Sierra Chica",
-      "Sierras Bayas",
-      "Villa Mi Serranía"
+      "Moreno",
+      "Trujui",
+      "Cuartel V",
+      "La Reja",
+      "Francisco Álvarez",
+      "Paso del Rey",
+      "Parque San Martín",
+      "Villa Trujui",
+      "Villa Zapiola",
+      "Chacras de Moreno",
+      "San Diego"
     ]
   },
   {
     "id": 8,
-    "nombre": "Quilmes",
+    "nombre": "General Rodríguez",
     "localidades": [
-      "Bernal",
-      "Bernal Oeste",
-      "Don Bosco",
-      "Ezpeleta",
-      "Quilmes",
-      "Quilmes Oeste",
-      "San Francisco Solano",
-      "Villa La Florida"
+      "General Rodríguez",
+      "Carlos Keen",
+      "La Cooperativa",
+      "González Catán",
+      "Pueblo Nuevo",
+      "González Fernández",
+      "Parque Irigoyen"
     ]
   },
   {
     "id": 9,
-    "nombre": "Avellaneda",
+    "nombre": "Marcos Paz",
     "localidades": [
-      "Avellaneda",
-      "Dock Sud",
-      "Dominico",
-      "Gerli",
-      "Piñeiro",
-      "Crucesita",
-      "Sarandí",
-      "Wilde"
-    ]
-  },
-  {
-    "id": 10,
-    "nombre": "Luján",
-    "localidades": [
-      "Carlos Keen",
-      "Cortínez",
-      "Jáuregui",
-      "Luján",
-      "Olivera",
-      "Open Door",
-      "Parque Lasa",
-      "Villa Flandria",
-      "Villa Lía",
-      "Villa Ruiz"
-    ]
-  },
-  {
-    "id": 11,
-    "nombre": "Necochea",
-    "localidades": [
-      "Claraz",
-      "Balneario Costa Bonita",
-      "Energía",
-      "Juan Nepomuceno Fernández",
-      "La Dulce",
-      "Las Grutas",
-      "Lumb",
-      "Quequén",
-      "Ramón Santamarina",
-      "San José",
-      "Santa María del Mar",
-      "Villa Díaz Vélez"
+      "Marcos Paz",
+      "Wheelwright",
+      "Pueblo de Marcos Paz",
+      "Aldo Bonzi",
+      "Campo Chico",
+      "Parque Industrial Marcos Paz"
     ]
   }
 ]
