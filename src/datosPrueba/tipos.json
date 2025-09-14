@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "tipo": "Hospital Público"
+  },
+  {
+    "id": 2,
+    "tipo": "Hospital Privado"
+  },
+  {
+    "id": 3,
+    "tipo": "Clínica"
+  },
+  {
+    "id": 4,
+    "tipo": "Consultorio"
+  },
+  {
+    "id": 5,
+    "tipo": "Policonsultorio"
+  },
+  {
+    "id": 6,
+    "tipo": "Centro de Salud"
+  },
+  {
+    "id": 7,
+    "tipo": "Posta Sanitaria"
+  },
+  {
+    "id": 8,
+    "tipo": "Dispensario"
+  },
+  {
+    "id": 9,
+    "tipo": "Instituto Médico Especializado"
+  },
+  {
+    "id": 10,
+    "tipo": "Centro de Rehabilitación"
+  },
+  {
+    "id": 11,
+    "tipo": "Hospital de Día"
+  },
+  {
+    "id": 12,
+    "tipo": "Centro de Diagnóstico"
+  },
+  {
+    "id": 13,
+    "tipo": "Laboratorio Clínico"
+  },
+  {
+    "id": 14,
+    "tipo": "Centro Odontológico"
+  },
+  {
+    "id": 15,
+    "tipo": "Centro de Imagenología"
+  },
+  {
+    "id": 16,
+    "tipo": "Maternidad"
+  },
+  {
+    "id": 17,
+    "tipo": "Centro de Salud Mental"
+  },
+  {
+    "id": 18,
+    "tipo": "Centro de Urgencias"
+  }
+]

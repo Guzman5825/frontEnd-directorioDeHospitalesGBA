@@ -22,8 +22,11 @@ export default function FormularioHospital() {
       dias_y_horarios: diasYHorarios,
     };
 
+
+    const baseUrl = `${import.meta.env.VITE_APP_API_URL}/hospitales`;
+
     try {
-      const response = await fetch("http://127.0.0.1:8000/hospitales", {
+      const response = await fetch(baseUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(hospital),
