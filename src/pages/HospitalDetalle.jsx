@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function HospitalDetalle() {
@@ -16,9 +16,8 @@ export default function HospitalDetalle() {
           throw new Error("Error al obtener hospital");
         }
         const data = await response.json();
-
         if (data.length > 0) {
-          setHospital(data[0]); // Tomamos el primero
+          setHospital(data[0]);
         } else {
           setError("Hospital no encontrado");
         }
@@ -45,31 +44,69 @@ export default function HospitalDetalle() {
   }
 
   return (
-    <div className="p-6 bg-white shadow rounded-md">
-      <h1 className="text-2xl font-bold">{hospital.nombre}</h1>
-      <p className="text-gray-700 mt-1">Tipo: {hospital.tipo}</p>
+    <div>
+      <nav className="bg-gray-100 shadow-md">
+        <div className="container mx-auto flex justify-between items-center p-4">
+          <div className="font-bold text-xl">INFORMACION</div>
+          <ul className="flex gap-6">
+            <li className="hover:text-gray-200 cursor-pointer">
+              <Link to="/" className="hover:text-gray-200 cursor-pointer">
+                Inicio
+              </Link>
+              
+            </li>
+            <li className="hover:text-gray-200 cursor-pointer">
+              <Link to="/hospitales" className="hover:text-gray-200 cursor-pointer">
+                Volver a busqueda
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg border border-gray-200">
 
-      <h2 className="mt-4 font-semibold">Ubicación:</h2>
-      <p>Ciudad: {hospital.ubicacion.ciudad}</p>
-      <p>Localidad: {hospital.ubicacion.localidad}</p>
-      <p>Dirección: {hospital.ubicacion.direccion}</p>
+        <h1 className="text-3xl font-bold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4">
+          {hospital.nombre}
+        </h1>
 
-      <h2 className="mt-4 font-semibold">Teléfonos:</h2>
-      <ul>
-        {hospital.telefonos.map((tel, index) => (
-          <li key={index}>{tel}</li>
-        ))}
-      </ul>
+        <p className="text-gray-600 mb-4">
+          <span className="font-semibold">Tipo:</span> {hospital.tipo}
+        </p>
 
-      <h2 className="mt-4 font-semibold">Especialidades:</h2>
-      <ul>
-        {hospital.especialidades.map((esp, index) => (
-          <li key={index}>{esp}</li>
-        ))}
-      </ul>
+        <div className="mb-4">
+          <h2 className="text-xl font-semibold text-gray-700 mb-2">Ubicación</h2>
+          <div className="bg-gray-50 p-4 rounded-md border border-gray-100">
+            <p><span className="font-medium">Ciudad:</span> {hospital.ubicacion.ciudad}</p>
+            <p><span className="font-medium">Localidad:</span> {hospital.ubicacion.localidad}</p>
+            <p><span className="font-medium">Dirección:</span> {hospital.ubicacion.direccion}</p>
+          </div>
+        </div>
 
-      <h2 className="mt-4 font-semibold">Días y Horarios:</h2>
-      <p>{hospital.dias_y_horarios}</p>
+        <div className="mb-4">
+          <h2 className="text-xl font-semibold text-gray-700 mb-2">Teléfonos</h2>
+          <ul className="list-disc list-inside bg-gray-50 p-4 rounded-md border border-gray-100">
+            {hospital.telefonos.map((tel, index) => (
+              <li key={index}>{tel}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mb-4">
+          <h2 className="text-xl font-semibold text-gray-700 mb-2">Especialidades</h2>
+          <ul className="list-disc list-inside bg-gray-50 p-4 rounded-md border border-gray-100">
+            {hospital.especialidades.map((esp, index) => (
+              <li key={index}>{esp}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mb-4">
+          <h2 className="text-xl font-semibold text-gray-700 mb-2">Días y Horarios</h2>
+          <div className="bg-gray-50 p-4 rounded-md border border-gray-100">
+            {hospital.dias_y_horarios}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
