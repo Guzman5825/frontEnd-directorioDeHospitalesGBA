@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HospitalRow from "../componentes/HospitalRow";
 import Selectores from "../componentes/Selectores";
 
 export default function HospitalTable() {
-  // Estado para los hospitales
   const [hospitales, setHospitales] = useState([]);
-  
-  const handleFiltrar = async ({ especialidad, ciudad, localidad, nombre }) => {
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
+  const handleFiltrar = async ({ especialidad, ciudad, localidad, nombre }, pageParam = 1) => {
     const baseUrl = `${import.meta.env.VITE_APP_API_URL}/hospitales`;
 
-    console.log("Datos recibidos:", especialidad, ciudad, localidad, nombre);
-    
-    // Armo los parámetros dinámicamente
     const params = new URLSearchParams();
+    params.append("page", pageParam); // 👈 envío la página actual
+    params.append("page_size", 10);   // 👈 puedes ajustarlo o hacerlo dinámico
 
     if (especialidad && especialidad !== "Todas las especialidades") 
       params.append("especialidad", especialidad);
@@ -23,10 +23,10 @@ export default function HospitalTable() {
     if (localidad && localidad !== "Todas las localidades") 
       params.append("localidad", localidad);
   
-    if( nombre )
+    if (nombre) 
       params.append("nombre", nombre);
 
-    const url = params.toString() ? `${baseUrl}?${params}` : baseUrl;
+    const url = `${baseUrl}?${params.toString()}`;
     
     try {
       const response = await fetch(url);
@@ -36,11 +36,23 @@ export default function HospitalTable() {
       const data = await response.json();
 
       setHospitales(data.data);
+      setPage(data.page);
+      setTotalPages(data.total_pages);
     } catch (error) {
       alert(`Error consultando la API:\n${error.message}`);
     }
   };
 
+  // Cuando cambie la página, refetch
+  useEffect(() => {
+    handleFiltrar({}, page);
+  }, [page]);
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setPage(newPage);
+    }
+  };
 
   return (
     <div className="p-6">
@@ -54,9 +66,8 @@ export default function HospitalTable() {
           <h2 className="font-bold font-arial text-gray-800">
             Buscar por filtros
           </h2>
-          <Selectores onFiltrar={handleFiltrar} />
+          <Selectores onFiltrar={(filtros) => handleFiltrar(filtros, 1)} />
         </div>
-
       </div>
 
       <table className="w-full border border-gray-300 overflow-hidden">
@@ -89,6 +100,48 @@ export default function HospitalTable() {
           )}
         </tbody>
       </table>
+
+      {/* Paginación */}
+      <div className="flex justify-center items-center gap-2 mt-4">
+        <button
+          className="px-3 py-1 border rounded disabled:opacity-50"
+          onClick={() => handlePageChange(page - 1)}
+          disabled={page === 1}
+        >
+          ←
+        </button>
+
+        {/* Mostrar páginas alrededor */}
+        {Array.from({ length: totalPages }, (_, i) => i + 1)
+          .filter(
+            (p) =>
+              p === 1 ||
+              p === totalPages ||
+              (p >= page - 2 && p <= page + 2)
+          )
+          .map((p, i, arr) => (
+            <span key={p}>
+              {/* Puntos suspensivos */}
+              {i > 0 && arr[i - 1] !== p - 1 && <span className="px-2">...</span>}
+              <button
+                className={`px-3 py-1 border rounded ${
+                  p === page ? "bg-green-700 text-white" : ""
+                }`}
+                onClick={() => handlePageChange(p)}
+              >
+                {p}
+              </button>
+            </span>
+          ))}
+
+        <button
+          className="px-3 py-1 border rounded disabled:opacity-50"
+          onClick={() => handlePageChange(page + 1)}
+          disabled={page === totalPages}
+        >
+          →
+        </button>
+      </div>
     </div>
   );
 }
